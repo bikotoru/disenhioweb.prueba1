@@ -10,3 +10,4 @@
 ## 9. ¿Qué te hace sentir más orgulloso de tu trabajo como joyero?
 ## 10. ¿Cuánto tiempo llevas dedicándote a la creación de joyería? ¿Cómo han evolucionado tus técnicas y diseños desde que comenzaste?
 ## 11. ¿Tienes algún diseñador o cultura que te inspire?
+## 12.¿Te gustaría tener una tienda física algún día?
