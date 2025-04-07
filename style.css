@@ -1,20 +1,21 @@
 .carrusel-container {
     position: relative;
-    max-width: 800px;
+    width: 80%;
+    max-width: 600px;
     margin: 0 auto;
+    overflow: hidden;
 }
 
 .carrusel {
-    position: relative;
-    height: 400px; /* Ajusta la altura según necesites */
+    display: flex;
+    transition: transform 0.5s ease;
 }
 
 .carrusel-imagen {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
     display: none;
+    width: 100%;
+    aspect-ratio: 1/1; 
+    object-fit: cover; 
 }
 
 .carrusel-imagen.activa {
@@ -33,10 +34,10 @@
     font-size: 18px;
 }
 
-.boton-carrusel.anterior {
+.anterior {
     left: 10px;
 }
 
-.boton-carrusel.siguiente {
+.siguiente {
     right: 10px;
 }
