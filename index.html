@@ -7,56 +7,126 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Nombre (Header pagina) Felipe Vergara !-->
+    <!-- Nombre (Header pagina) Felipe Vergara -->
     <header>
         <h1>Malabarizta Designs</h1>
-        <p>diseños unicos y artesanales para momentos especiales</p>
-        <header>
+        <p>Diseños únicos y artesanales para momentos especiales</p>
+    </header>
         
-    <!-- Descripción Felipe Valdes !-->
-     <section>
-  <h3>Descripción de la Empresa</h3>
-  <p>[Aquí irá la descripción general de la empresa, proporcionada por el dueño]</p>
-</section>
+    <!-- Descripción Felipe Valdes -->
+    <section class="descripcion">
+        <h3>Descripción de la Empresa</h3>
+        <p>Malabarizta Designs es un emprendimiento de joyería artesanal donde cada pieza es única y hecha a mano con dedicación y amor. Nos especializamos en joyas inspiradas en culturas étnicas, especialmente de raíz Mapuche, utilizando técnicas tradicionales de orfebrería heredadas de generación en generación. Nuestras creaciones están diseñadas para quienes valoran la originalidad y buscan piezas únicas que perduran en el tiempo, perfectas para ocasiones especiales como matrimonios, compromisos, aniversarios y más.</p>
+    </section>
        
-    <!-- Misión y Visión Xenia Toledo !-->
-                <h4>Misión</h4>
-        <p>Nuestra misión es crear joyas únicas, hechas a mano, que representen la historia y esencia de cada cliente, utilizando técnicas tradicionales de orfebrería.</p>
-
-        <h4>Visión</h4>
-        <p>Convertirnos en un referente de joyería artesanal, promoviendo el valor cultural del oficio y ofreciendo piezas de alta calidad que perduren en el tiempo.</p>
-
-
-    <!-- Carrucel imagenes Victor Ureta  !-->
-    <div class="carrusel-container">
-        <div class="carrusel">
-            <img src="img/imagen1.png" alt="Imagen 1" class="carrusel-imagen activa">
-            <img src="img/imagen2.png" alt="Imagen 2" class="carrusel-imagen">
-            <img src="img/imagen3.png" alt="Imagen 3" class="carrusel-imagen">
-            <img src="img/imagen4.png" alt="Imagen 4" class="carrusel-imagen">
-            <img src="img/imagen5.png" alt="Imagen 4" class="carrusel-imagen">
-            <img src="img/imagen6.png" alt="Imagen 4" class="carrusel-imagen">
+    <!-- Misión y Visión Xenia Toledo -->
+    <section class="mision-vision">
+        <div class="mision">
+            <h4>Misión</h4>
+            <p>Nuestra misión es crear joyas únicas, hechas a mano, que representen la historia y esencia de cada cliente, utilizando técnicas tradicionales de orfebrería.</p>
         </div>
-        <button class="boton-carrusel anterior" onclick="cambiarImagen(-1)">&#10094;</button>
-        <button class="boton-carrusel siguiente" onclick="cambiarImagen(1)">&#10095;</button>
-    </div>
 
-    <!-- Información complementaria y redes sociales Alexis  !-->
-    <h3>Informacion Complementaria</h3>
-    <p>Nuestro producto está inspirado en la elaboración de joyas étnicas, sobre todo de raíz Mapuche.</p>
-    <p>Actualmente no contamos con un local establecido, vendemos nuestro productos en ferias y exposiciones,
-         a través de una agrupación en la comuna de la florida y en línea a través de nuestras redes sociales.</p>
+        <div class="vision">
+            <h4>Visión</h4>
+            <p>Convertirnos en un referente de joyería artesanal, promoviendo el valor cultural del oficio y ofreciendo piezas de alta calidad que perduren en el tiempo.</p>
+        </div>
+    </section>
+
+    <!-- Carrucel imagenes Victor Ureta -->
+    <section class="carrusel-section">
+        <div class="carrusel-container">
+            <div class="carrusel">
+                <img src="img/imagen1.png" alt="Imagen 1" class="carrusel-imagen activa">
+                <img src="img/imagen2.png" alt="Imagen 2" class="carrusel-imagen">
+                <img src="img/imagen3.png" alt="Imagen 3" class="carrusel-imagen">
+                <img src="img/imagen4.png" alt="Imagen 4" class="carrusel-imagen">
+                <img src="img/imagen5.png" alt="Imagen 5" class="carrusel-imagen">
+            </div>
+            <button class="boton-carrusel anterior" onclick="cambiarImagen(-1)">&#10094;</button>
+            <button class="boton-carrusel siguiente" onclick="cambiarImagen(1)">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- Técnicas y características únicas -->
+    <section class="tecnicas">
+        <h3>Nuestras Técnicas</h3>
+        <ul>
+            <li>Engaste</li>
+            <li>Técnicas de Martillado</li>
+            <li>Incrustaciones</li>
+            <li>Reticulado</li>
+            <li>Pátina</li>
+            <li>Técnicas Mixtas</li>
+        </ul>
+        
+        <h3>¿Qué hace únicas nuestras joyas?</h3>
+        <p>Cada pieza que creamos es única, nunca trabajamos en serie. Nuestras joyas son elaboradas completamente a mano, utilizando técnicas tradicionales que aseguran su originalidad y calidad.</p>
+    </section>
+
+    <!-- Clientes y ocasiones -->
+    <section class="clientes-ocasiones">
+        <h3>Nuestros Clientes</h3>
+        <p>Nuestros clientes ideales son personas que buscan originalidad, que aprecian las piezas únicas y las joyas que perduran en el tiempo. Valoran el trabajo artesanal y el significado cultural detrás de cada creación.</p>
+        
+        <h3>Ocasiones Especiales</h3>
+        <p>Nuestras joyas son perfectas para:</p>
+        <ul>
+            <li>Matrimonios</li>
+            <li>Compromisos</li>
+            <li>Aniversarios</li>
+            <li>Cumpleaños</li>
+            <li>Día de los enamorados</li>
+            <li>Navidad</li>
+            <li>Cualquier ocasión especial que merezca ser recordada</li>
+        </ul>
+    </section>
+
+    <!-- Historia de la marca -->
+    <section class="nuestra-historia">
+        <h3>Nuestra Historia</h3>
+        <p>Malabarizta Designs nace de una hermosa historia familiar. Mi padre fue orfebre, aunque en algún momento abandonó el oficio por dificultades económicas y luego de sufrir un ACV. Un día decidí tomar un curso de orfebrería para aprender a soldar, lo que inspiró a mi padre a retomar su pasión. Juntos armamos un taller, donde él encontró su rehabilitación. Comenzamos a trabajar en proyectos juntos mientras yo vendía nuestras creaciones en ferias a través de una agrupación en la comuna de La Florida.</p>
+        
+        <p>Mi padre falleció en 2020 debido al Covid. Fue un momento muy difícil en mi vida, pero heredé todo su taller y sus herramientas, cada una hecha a su modo. Eso me INSPIRA a realizar cada pieza con algo de él, manteniendo vivo su legado en cada creación.</p>
+        
+        <h4>El significado de nuestro nombre</h4>
+        <p>El nombre "Malabarizta" tiene que ver con mi capacidad para realizar muchas cosas a la vez, especialmente utilizar diversas técnicas para crear algo único y especial.</p>
+        
+        <h4>Nuestro mayor orgullo</h4>
+        <p>Lo que me hace sentir más orgullosa es haber heredado la habilidad de mi padre para crear y seguir fusionando todas mis habilidades en cada pieza única que elaboro.</p>
+        
+        <h4>Nuestra trayectoria</h4>
+        <p>Creamos el taller con mi padre alrededor del 2010. Dejé de trabajar de forma dependiente hace 12 años, desde que quedé embarazada de mi hijo menor Jorgito, quien tiene TEA severo y actualmente tiene 11 años. Desde entonces, me he dedicado completamente a él y a mis joyas.</p>
+    </section>
+
+    <!-- Inspiración y futuro -->
+    <section class="inspiracion-futuro">
+        <h3>Nuestra Inspiración</h3>
+        <p>Siempre me han inspirado las joyas étnicas, sobre todo las de tradición Mapuche, así como otras joyas de raíces populares de nuestra idiosincrasia chilena.</p>
+        
+        <h3>Nuestra Visión de Futuro</h3>
+        <p>Imaginamos que nuestra marca sea reconocida a nivel nacional por la calidad y originalidad de nuestras piezas. Nos gustaría tener una tienda física donde podamos mostrar nuestras creaciones y acercar el arte de la orfebrería a más personas.</p>
+    </section>
+
+    <!-- Información complementaria y redes sociales Alexis -->
+    <section class="info-complementaria">
+        <h3>Información Complementaria</h3>
+        <p>Nuestro producto está inspirado en la elaboración de joyas étnicas, sobre todo de raíz Mapuche.</p>
+        <p>Actualmente no contamos con un local establecido, vendemos nuestros productos en ferias y exposiciones, a través de una agrupación en la comuna de La Florida y en línea a través de nuestras redes sociales.</p>
+    </section>
     
-    <h3>Redes Sociales</h3>
-    <ul>
-        <li>
-            <a href="https://www.instagram.com/malabariztadesigns" target="_blank">Instagram</a>
-        </li>
-    </ul>
+    <section class="redes-sociales">
+        <h3>Redes Sociales</h3>
+        <ul>
+            <li>
+                <a href="https://www.instagram.com/malabariztadesigns" target="_blank">Instagram</a>
+            </li>
+        </ul>
+    </section>
 
-    <p>@2025 Malabarizta Designs. Todos los derechos reservados.</p>
+    <footer>
+        <p>&copy; 2025 Malabarizta Designs. Todos los derechos reservados.</p>
+    </footer>
 
 </body>
 <script src="app.js"></script>
-
 </html>
