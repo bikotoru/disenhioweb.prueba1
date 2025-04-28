@@ -3,130 +3,374 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Malabarizta Designs</title>
+    <title>Malabarizta Designs | Joyería Artesanal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <link rel="stylesheet" href="style.css">
+
+    <style>
+     
+    </style>
 </head>
 <body>
     <!-- Nombre (Header pagina) Felipe Vergara -->
-    <header>
-        <h1>Malabarizta Designs</h1>
-        <p>Diseños únicos y artesanales para momentos especiales</p>
-    </header>
-        
-    <!-- Descripción Felipe Valdes -->
-    <section class="descripcion">
-        <h3>Descripción de la Empresa</h3>
-        <p>Malabarizta Designs es un emprendimiento de joyería artesanal donde cada pieza es única y hecha a mano con dedicación y amor. Nos especializamos en joyas inspiradas en culturas étnicas, especialmente de raíz Mapuche, utilizando técnicas tradicionales de orfebrería heredadas de generación en generación. Nuestras creaciones están diseñadas para quienes valoran la originalidad y buscan piezas únicas que perduran en el tiempo, perfectas para ocasiones especiales como matrimonios, compromisos, aniversarios y más.</p>
-    </section>
-       
-    <!-- Misión y Visión Xenia Toledo -->
-    <section class="mision-vision">
-        <div class="mision">
-            <h4>Misión</h4>
-            <p>Nuestra misión es crear joyas únicas, hechas a mano, que representen la historia y esencia de cada cliente, utilizando técnicas tradicionales de orfebrería.</p>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#" class="navbar-logo">Malabarizta Designs</a>
+            <div class="navbar-links" id="navbarLinks">
+                <a href="#home" class="active">Inicio</a>
+                <a href="#about">Nosotros</a>
+                <a href="#gallery">Galería</a>
+                <a href="#techniques">Técnicas</a>
+                <a href="#history">Historia</a>
+                <a href="#contact">Contacto</a>
+            </div>
+            <div class="navbar-toggle" id="navbarToggle">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
+    </nav>
 
-        <div class="vision">
-            <h4>Visión</h4>
-            <p>Convertirnos en un referente de joyería artesanal, promoviendo el valor cultural del oficio y ofreciendo piezas de alta calidad que perduren en el tiempo.</p>
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content" data-aos="fade-right" data-aos-duration="1000">
+                <h1 class="hero-title">Malabarizta Designs</h1>
+                <p class="hero-subtitle">Diseños únicos y artesanales para momentos especiales, inspirados en la cultura Mapuche</p>
+                <div class="hero-btns">
+                    <a href="#gallery" class="btn">Ver Colección</a>
+                    <a href="#contact" class="btn" style="background: transparent; border: 2px solid var(--light-color);">Contáctanos</a>
+                </div>
+            </div>
+        </div>
+        <a href="#about" class="hero-scroll">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
+
+    <!-- Descripción Felipe Valdes -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Nuestra Esencia</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text" data-aos="fade-right" data-aos-duration="1000">
+                    <h3>Joyería Artesanal con Historia</h3>
+                    <p>Malabarizta Designs es un emprendimiento de joyería artesanal donde cada pieza es única y hecha a mano con dedicación y amor. Nos especializamos en joyas inspiradas en culturas étnicas, especialmente de raíz Mapuche, utilizando técnicas tradicionales de orfebrería heredadas de generación en generación.</p>
+                    <p>Nuestras creaciones están diseñadas para quienes valoran la originalidad y buscan piezas únicas que perduran en el tiempo, perfectas para ocasiones especiales como matrimonios, compromisos, aniversarios y más.</p>
+                    <div class="ethnic-pattern"></div>
+                </div>
+                <div class="about-image" data-aos="fade-left" data-aos-duration="1000">
+                    <img src="img/image0.png" alt="Joyería artesanal Malabarizta">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Misión y Visión Xenia Toledo -->
+    <section class="section mission-vision">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2 style="color: var(--light-color);">Misión y Visión</h2>
+            </div>
+            <div class="mission-vision-content">
+                <div class="mission-card" data-aos="fade-right" data-aos-duration="1000">
+                    <h3><i class="fas fa-gem"></i> Misión</h3>
+                    <p>Nuestra misión es crear joyas únicas, hechas a mano, que representen la historia y esencia de cada cliente, utilizando técnicas tradicionales de orfebrería.</p>
+                    <p>Nos enfocamos en preservar el arte ancestral de la orfebrería mientras ofrecemos piezas que cuentan una historia y tienen un significado especial para quien las lleva.</p>
+                </div>
+                <div class="vision-card" data-aos="fade-left" data-aos-duration="1000">
+                    <h3><i class="fas fa-eye"></i> Visión</h3>
+                    <p>Convertirnos en un referente de joyería artesanal, promoviendo el valor cultural del oficio y ofreciendo piezas de alta calidad que perduren en el tiempo.</p>
+                    <p>Aspiramos a difundir el conocimiento de las técnicas tradicionales y la importancia cultural de nuestras joyas, creando conciencia sobre el valor del trabajo artesanal.</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Carrucel imagenes Victor Ureta -->
-    <section class="carrusel-section">
-        <div class="carrusel-container">
-            <div class="carrusel">
-                <img src="img/imagen1.png" alt="Imagen 1" class="carrusel-imagen activa">
-                <img src="img/imagen2.png" alt="Imagen 2" class="carrusel-imagen">
-                <img src="img/imagen3.png" alt="Imagen 3" class="carrusel-imagen">
-                <img src="img/imagen4.png" alt="Imagen 4" class="carrusel-imagen">
-                <img src="img/imagen5.png" alt="Imagen 5" class="carrusel-imagen">
+    <section class="section gallery" id="gallery">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Nuestra Colección</h2>
             </div>
-            <button class="boton-carrusel anterior" onclick="cambiarImagen(-1)">&#10094;</button>
-            <button class="boton-carrusel siguiente" onclick="cambiarImagen(1)">&#10095;</button>
+            <div class="gallery-container" data-aos="fade-up" data-aos-duration="1000">
+                <div class="gallery-slider" id="gallerySlider">
+                    <div class="gallery-slide">
+                        <img src="img/imagen1.png" alt="Joyería Malabarizta 1">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="img/imagen2.png" alt="Joyería Malabarizta 2">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="img/imagen3.png" alt="Joyería Malabarizta 3">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="img/imagen4.png" alt="Joyería Malabarizta 4">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="img/imagen5.png" alt="Joyería Malabarizta 5">
+                    </div>
+                </div>
+                <div class="gallery-nav gallery-prev" id="galleryPrev">
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+                <div class="gallery-nav gallery-next" id="galleryNext">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+                <div class="gallery-dots" id="galleryDots"></div>
+            </div>
         </div>
     </section>
 
-    <!-- Técnicas y características únicas -->
-    <section class="tecnicas">
-        <h3>Nuestras Técnicas</h3>
-        <ul>
-            <li>Engaste</li>
-            <li>Técnicas de Martillado</li>
-            <li>Incrustaciones</li>
-            <li>Reticulado</li>
-            <li>Pátina</li>
-            <li>Técnicas Mixtas</li>
-        </ul>
-        
-        <h3>¿Qué hace únicas nuestras joyas?</h3>
-        <p>Cada pieza que creamos es única, nunca trabajamos en serie. Nuestras joyas son elaboradas completamente a mano, utilizando técnicas tradicionales que aseguran su originalidad y calidad.</p>
+    <section class="section techniques" id="techniques">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Nuestras Técnicas</h2>
+            </div>
+            <div class="techniques-content">
+                <div class="technique-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                    <div class="technique-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h4>Engaste</h4>
+                    <p>Técnica ancestral para fijar piedras preciosas y semipreciosas en el metal, creando contrastes y realzando la belleza de las gemas.</p>
+                </div>
+                <div class="technique-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                    <div class="technique-icon">
+                        <i class="fas fa-hammer"></i>
+                    </div>
+                    <h4>Martillado</h4>
+                    <p>Proceso de dar forma y textura al metal mediante golpes precisos, creando efectos únicos y superficies con carácter.</p>
+                </div>
+                <div class="technique-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                    <div class="technique-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h4>Incrustaciones</h4>
+                    <p>Arte de combinar diferentes metales y materiales, creando diseños con profundidad y contraste visual.</p>
+                </div>
+                <div class="technique-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+                    <div class="technique-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h4>Reticulado</h4>
+                    <p>Técnica que utiliza calor para crear texturas orgánicas en la superficie del metal, similar a paisajes naturales.</p>
+                </div>
+                <div class="technique-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
+                    <div class="technique-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h4>Pátina</h4>
+                    <p>Proceso de oxidación controlada que añade color y profundidad al metal, creando acabados antiguos y únicos.</p>
+                </div>
+                <div class="technique-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
+                    <div class="technique-icon">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <h4>Técnicas Mixtas</h4>
+                    <p>Combinación de diferentes métodos y materiales que dan como resultado piezas únicas con personalidad propia.</p>
+                </div>
+            </div>
+            <div class="unique-features" data-aos="fade-up" data-aos-duration="1000">
+                <h3>¿Qué hace únicas nuestras joyas?</h3>
+                <p>Cada pieza que creamos es única, nunca trabajamos en serie. Nuestras joyas son elaboradas completamente a mano, utilizando técnicas tradicionales que aseguran su originalidad y calidad. Cada creación lleva consigo una parte de nuestra historia y tradición familiar, manteniendo vivo el legado artesanal que ha pasado de generación en generación.</p>
+            </div>
+        </div>
     </section>
-
-    <!-- Clientes y ocasiones -->
-    <section class="clientes-ocasiones">
-        <h3>Nuestros Clientes</h3>
-        <p>Nuestros clientes ideales son personas que buscan originalidad, que aprecian las piezas únicas y las joyas que perduran en el tiempo. Valoran el trabajo artesanal y el significado cultural detrás de cada creación.</p>
-        
-        <h3>Ocasiones Especiales</h3>
-        <p>Nuestras joyas son perfectas para:</p>
-        <ul>
-            <li>Matrimonios</li>
-            <li>Compromisos</li>
-            <li>Aniversarios</li>
-            <li>Cumpleaños</li>
-            <li>Día de los enamorados</li>
-            <li>Navidad</li>
-            <li>Cualquier ocasión especial que merezca ser recordada</li>
-        </ul>
-    </section>
-
-    <!-- Historia de la marca -->
-    <section class="nuestra-historia">
-        <h3>Nuestra Historia</h3>
-        <p>Malabarizta Designs nace de una hermosa historia familiar. Mi padre fue orfebre, aunque en algún momento abandonó el oficio por dificultades económicas y luego de sufrir un ACV. Un día decidí tomar un curso de orfebrería para aprender a soldar, lo que inspiró a mi padre a retomar su pasión. Juntos armamos un taller, donde él encontró su rehabilitación. Comenzamos a trabajar en proyectos juntos mientras yo vendía nuestras creaciones en ferias a través de una agrupación en la comuna de La Florida.</p>
-        
-        <p>Mi padre falleció en 2020 debido al Covid. Fue un momento muy difícil en mi vida, pero heredé todo su taller y sus herramientas, cada una hecha a su modo. Eso me INSPIRA a realizar cada pieza con algo de él, manteniendo vivo su legado en cada creación.</p>
-        
-        <h4>El significado de nuestro nombre</h4>
-        <p>El nombre "Malabarizta" tiene que ver con mi capacidad para realizar muchas cosas a la vez, especialmente utilizar diversas técnicas para crear algo único y especial.</p>
-        
-        <h4>Nuestro mayor orgullo</h4>
-        <p>Lo que me hace sentir más orgullosa es haber heredado la habilidad de mi padre para crear y seguir fusionando todas mis habilidades en cada pieza única que elaboro.</p>
-        
-        <h4>Nuestra trayectoria</h4>
-        <p>Creamos el taller con mi padre alrededor del 2010. Dejé de trabajar de forma dependiente hace 12 años, desde que quedé embarazada de mi hijo menor Jorgito, quien tiene TEA severo y actualmente tiene 11 años. Desde entonces, me he dedicado completamente a él y a mis joyas.</p>
-    </section>
-
-    <!-- Inspiración y futuro -->
-    <section class="inspiracion-futuro">
-        <h3>Nuestra Inspiración</h3>
-        <p>Siempre me han inspirado las joyas étnicas, sobre todo las de tradición Mapuche, así como otras joyas de raíces populares de nuestra idiosincrasia chilena.</p>
-        
-        <h3>Nuestra Visión de Futuro</h3>
-        <p>Imaginamos que nuestra marca sea reconocida a nivel nacional por la calidad y originalidad de nuestras piezas. Nos gustaría tener una tienda física donde podamos mostrar nuestras creaciones y acercar el arte de la orfebrería a más personas.</p>
-    </section>
-
     <!-- Información complementaria y redes sociales Alexis -->
-    <section class="info-complementaria">
-        <h3>Información Complementaria</h3>
-        <p>Nuestro producto está inspirado en la elaboración de joyas étnicas, sobre todo de raíz Mapuche.</p>
-        <p>Actualmente no contamos con un local establecido, vendemos nuestros productos en ferias y exposiciones, a través de una agrupación en la comuna de La Florida y en línea a través de nuestras redes sociales.</p>
-    </section>
-    
-    <section class="redes-sociales">
-        <h3>Redes Sociales</h3>
-        <ul>
-            <li>
-                <a href="https://www.instagram.com/malabariztadesigns" target="_blank">Instagram</a>
-            </li>
-        </ul>
+    <section class="section clients">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2 style="color: var(--light-color);">Nuestros Clientes</h2>
+            </div>
+            <div class="clients-content">
+                <div class="clients-info" data-aos="fade-right" data-aos-duration="1000">
+                    <h3 style="color: var(--light-color);">¿Para quién creamos?</h3>
+                    <p>Nuestros clientes ideales son personas que buscan originalidad, que aprecian las piezas únicas y las joyas que perduran en el tiempo. Valoran el trabajo artesanal y el significado cultural detrás de cada creación.</p>
+                    <p>Diseñamos para quienes desean expresar su personalidad a través de joyas que cuentan historias, para aquellos que entienden que una joya no es solo un adorno, sino un símbolo que perdura en el tiempo.</p>
+                </div>
+                <div class="occasions-info" data-aos="fade-left" data-aos-duration="1000">
+                    <h3 style="color: var(--light-color);">Ocasiones Especiales</h3>
+                    <p>Nuestras joyas son perfectas para momentos que merecen ser recordados, creaciones que se convierten en testigos de instantes especiales en la vida.</p>
+                    <div class="occasions-list">
+                        <span class="occasion-item">Matrimonios</span>
+                        <span class="occasion-item">Compromisos</span>
+                        <span class="occasion-item">Aniversarios</span>
+                        <span class="occasion-item">Cumpleaños</span>
+                        <span class="occasion-item">Día de los enamorados</span>
+                        <span class="occasion-item">Navidad</span>
+                        <span class="occasion-item">Momentos para recordar</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <footer>
-        <p>&copy; 2025 Malabarizta Designs. Todos los derechos reservados.</p>
+    <section class="section history" id="history">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Nuestra Historia</h2>
+            </div>
+            <div class="history-timeline">
+                <div class="timeline-item" data-aos="fade-up" data-aos-duration="800">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Inicios</span>
+                        <h4>Un Legado Familiar</h4>
+                        <p>Malabarizta Designs nace de una hermosa historia familiar. Mi padre fue orfebre, aunque en algún momento abandonó el oficio por dificultades económicas y luego de sufrir un ACV.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-up" data-aos-duration="800">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2010</span>
+                        <h4>El Taller Compartido</h4>
+                        <p>Un día decidí tomar un curso de orfebrería para aprender a soldar, lo que inspiró a mi padre a retomar su pasión. Juntos armamos un taller, donde él encontró su rehabilitación.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-up" data-aos-duration="800">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2013</span>
+                        <h4>Dedicación Completa</h4>
+                        <p>Dejé de trabajar de forma dependiente, desde que quedé embarazada de mi hijo menor Jorgito, quien tiene TEA severo. Desde entonces, me he dedicado completamente a él y a mis joyas.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-up" data-aos-duration="800">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2020</span>
+                        <h4>Continuando el Legado</h4>
+                        <p>Mi padre falleció debido al Covid. Fue un momento muy difícil en mi vida, pero heredé todo su taller y sus herramientas, cada una hecha a su modo. Eso me INSPIRA a realizar cada pieza con algo de él.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-up" data-aos-duration="800">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Presente</span>
+                        <h4>Malabarizta Hoy</h4>
+                        <p>Hoy, el nombre "Malabarizta" refleja mi capacidad para realizar muchas cosas a la vez, especialmente utilizar diversas técnicas para crear algo único y especial, manteniendo vivo el legado de mi padre.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section inspiration">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2 style="color: var(--light-color);">Nuestra Inspiración</h2>
+            </div>
+            <div class="inspiration-content">
+                <div class="inspiration-image" data-aos="fade-right" data-aos-duration="1000">
+                    <img src="img/image6.png" alt="Inspiración Mapuche">
+                </div>
+                <div class="inspiration-text" data-aos="fade-left" data-aos-duration="1000">
+                    <h3 style="color: var(--light-color);">Raíces que Inspiran</h3>
+                    <p>Siempre me han inspirado las joyas étnicas, sobre todo las de tradición Mapuche, así como otras joyas de raíces populares de nuestra idiosincrasia chilena.</p>
+                    <p>La conexión con la tierra, los símbolos ancestrales y el profundo significado detrás de cada diseño son elementos que se reflejan en nuestras creaciones, honrando la rica herencia cultural que nos rodea.</p>
+                    <div class="ethnic-pattern" style="opacity: 0.2;"></div>
+                    <h3 style="color: var(--light-color);">Nuestra Visión de Futuro</h3>
+                    <p>Imaginamos que nuestra marca sea reconocida a nivel nacional por la calidad y originalidad de nuestras piezas. Nos gustaría tener una tienda física donde podamos mostrar nuestras creaciones y acercar el arte de la orfebrería a más personas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Contáctanos</h2>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info" data-aos="fade-right" data-aos-duration="1000">
+                    <h3>Información de Contacto</h3>
+                    <p>Actualmente no contamos con un local establecido, vendemos nuestros productos en ferias y exposiciones, a través de una agrupación en la comuna de La Florida y en línea a través de nuestras redes sociales.</p>
+                    
+
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>malabarizta@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4>Teléfono</h4>
+                            <p>+56 9 8443 2462</p>
+                        </div>
+                    </div>
+                    
+                    <h4>Síguenos en Redes Sociales</h4>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/malabariztadesigns" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                  
+                        <a href="https://api.whatsapp.com/send?phone=56984432462" class="social-link">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+             
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <a href="#" class="footer-logo">Malabarizta Designs</a>
+                    <p>Joyería artesanal única inspirada en la cultura Mapuche y elaborada con técnicas tradicionales de orfebrería.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/malabariztadesigns" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                  
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="#home">Inicio</a></li>
+                        <li><a href="#about">Nosotros</a></li>
+                        <li><a href="#gallery">Galería</a></li>
+                        <li><a href="#techniques">Técnicas</a></li>
+                        <li><a href="#history">Historia</a></li>
+                        <li><a href="#contact">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Ocasiones Especiales</h4>
+                    <ul>
+                        <li><a href="#">Matrimonios</a></li>
+                        <li><a href="#">Compromisos</a></li>
+                        <li><a href="#">Aniversarios</a></li>
+                        <li><a href="#">Cumpleaños</a></li>
+                        <li><a href="#">Regalos Personalizados</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Malabarizta Designs. Todos los derechos reservados.</p>
+            </div>
+        </div>
     </footer>
 
+    <script src="app.js"></script>
+
 </body>
-<script src="app.js"></script>
 </html>
