@@ -1,0 +1,1367 @@
+// Ruta: F:\iplacex\disenhioweb.prueba1\app.js
+  AOS.init();
+
+  const navbarToggle = document.getElementById('navbarToggle');
+  const navbarLinks = document.getElementById('navbarLinks');
+
+  navbarToggle.addEventListener('click', () => {
+      navbarLinks.classList.toggle('active');
+  });
+
+  window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+          navbar.classList.add('scrolled');
+      } else {
+          navbar.classList.remove('scrolled');
+      }
+  });
+
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('.navbar-links a');
+
+  window.addEventListener('scroll', () => {
+      let current = '';
+      
+      sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          
+          if (window.scrollY >= (sectionTop - 200)) {
+              current = section.getAttribute('id');
+          }
+      });
+      
+      navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href').includes(current)) {
+              link.classList.add('active');
+          }
+      });
+  });
+
+  const gallerySlider = document.getElementById('gallerySlider');
+  const gallerySlides = document.querySelectorAll('.gallery-slide');
+  const galleryPrev = document.getElementById('galleryPrev');
+  const galleryNext = document.getElementById('galleryNext');
+  const galleryDots = document.getElementById('galleryDots');
+  
+  let currentSlide = 0;
+  const slideCount = gallerySlides.length;
+  
+  for (let i = 0; i < slideCount; i++) {
+      const dot = document.createElement('div');
+      dot.classList.add('gallery-dot');
+      if (i === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => {
+          goToSlide(i);
+      });
+      galleryDots.appendChild(dot);
+  }
+  
+  const dots = document.querySelectorAll('.gallery-dot');
+  
+  function updateSlider() {
+      gallerySlider.style.transform = `translateX(-${currentSlide * 100}%)`;
+      
+      dots.forEach((dot, index) => {
+          dot.classList.toggle('active', index === currentSlide);
+      });
+  }
+  
+  function goToSlide(index) {
+      currentSlide = index;
+      updateSlider();
+  }
+  
+  function nextSlide() {
+      currentSlide = (currentSlide + 1) % slideCount;
+      updateSlider();
+  }
+  
+  function prevSlide() {
+      currentSlide = (currentSlide - 1 + slideCount) % slideCount;
+      updateSlider();
+  }
+  
+  galleryNext.addEventListener('click', nextSlide);
+  galleryPrev.addEventListener('click', prevSlide);
+  
+  let slideInterval = setInterval(nextSlide, 5000);
+  
+  gallerySlider.addEventListener('mouseenter', () => {
+      clearInterval(slideInterval);
+  });
+  
+  gallerySlider.addEventListener('mouseleave', () => {
+      slideInterval = setInterval(nextSlide, 5000);
+  });
+
+  
+
+
+// Ruta: F:\iplacex\disenhioweb.prueba1\index.html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malabarizta Designs | Joyería Artesanal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+     
+    </style>
+</head>
+<body>
+    <!-- Nombre (Header pagina) Felipe Vergara -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#" class="navbar-logo">Malabarizta Designs</a>
+            <div class="navbar-links" id="navbarLinks">
+                <a href="#home" class="active">Inicio</a>
+                <a href="#about">Nosotros</a>
+                <a href="#gallery">Galería</a>
+                <a href="#techniques">Técnicas</a>
+                <a href="#history">Historia</a>
+                <a href="#contact">Contacto</a>
+            </div>
+            <div class="navbar-toggle" id="navbarToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content" data-aos="fade-right" data-aos-duration="1000">
+                <h1 class="hero-title">Malabarizta Designs</h1>
+                <p class="hero-subtitle">Diseños únicos y artesanales para momentos especiales, inspirados en la cultura Mapuche</p>
+                <div class="hero-btns">
+                    <a href="#gallery" class="btn">Ver Colección</a>
+                    <a href="#contact" class="btn" style="background: transparent; border: 2px solid var(--light-color);">Contáctanos</a>
+                </div>
+            </div>
+        </div>
+        <a href="#about" class="hero-scroll">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
+
+    <!-- Descripción Felipe Valdes -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Nuestra Esencia</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text" data-aos="fade-right" data-aos-duration="1000">
+                    <h3>Joyería Artesanal con Historia</h3>
+                    <p>Malabarizta Designs es un emprendimiento de joyería artesanal donde cada pieza es única y hecha a mano con dedicación y amor. Nos especializamos en joyas inspiradas en culturas étnicas, especialmente de raíz Mapuche, utilizando técnicas tradicionales de orfebrería heredadas de generación en generación.</p>
+                    <p>Nuestras creaciones están diseñadas para quienes valoran la originalidad y buscan piezas únicas que perduran en el tiempo, perfectas para ocasiones especiales como matrimonios, compromisos, aniversarios y más.</p>
+                    <div class="ethnic-pattern"></div>
+                </div>
+                <div class="about-image" data-aos="fade-left" data-aos-duration="1000">
+                    <img src="img/image0.png" alt="Joyería artesanal Malabarizta">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Misión y Visión Xenia Toledo -->
+    <section class="section mission-vision">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2 style="color: var(--light-color);">Misión y Visión</h2>
+            </div>
+            <div class="mission-vision-content">
+                <div class="mission-card" data-aos="fade-right" data-aos-duration="1000">
+                    <h3><i class="fas fa-gem"></i> Misión</h3>
+                    <p>Nuestra misión es crear joyas únicas, hechas a mano, que representen la historia y esencia de cada cliente, utilizando técnicas tradicionales de orfebrería.</p>
+                    <p>Nos enfocamos en preservar el arte ancestral de la orfebrería mientras ofrecemos piezas que cuentan una historia y tienen un significado especial para quien las lleva.</p>
+                </div>
+                <div class="vision-card" data-aos="fade-left" data-aos-duration="1000">
+                    <h3><i class="fas fa-eye"></i> Visión</h3>
+                    <p>Convertirnos en un referente de joyería artesanal, promoviendo el valor cultural del oficio y ofreciendo piezas de alta calidad que perduren en el tiempo.</p>
+                    <p>Aspiramos a difundir el conocimiento de las técnicas tradicionales y la importancia cultural de nuestras joyas, creando conciencia sobre el valor del trabajo artesanal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carrucel imagenes Victor Ureta -->
+    <section class="section gallery" id="gallery">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Nuestra Colección</h2>
+            </div>
+            <div class="gallery-container" data-aos="fade-up" data-aos-duration="1000">
+                <div class="gallery-slider" id="gallerySlider">
+                    <div class="gallery-slide">
+                        <img src="img/imagen1.png" alt="Joyería Malabarizta 1">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="img/imagen2.png" alt="Joyería Malabarizta 2">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="img/imagen3.png" alt="Joyería Malabarizta 3">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="img/imagen4.png" alt="Joyería Malabarizta 4">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="img/imagen5.png" alt="Joyería Malabarizta 5">
+                    </div>
+                </div>
+                <div class="gallery-nav gallery-prev" id="galleryPrev">
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+                <div class="gallery-nav gallery-next" id="galleryNext">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+                <div class="gallery-dots" id="galleryDots"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section techniques" id="techniques">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Nuestras Técnicas</h2>
+            </div>
+            <div class="techniques-content">
+                <div class="technique-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                    <div class="technique-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h4>Engaste</h4>
+                    <p>Técnica ancestral para fijar piedras preciosas y semipreciosas en el metal, creando contrastes y realzando la belleza de las gemas.</p>
+                </div>
+                <div class="technique-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                    <div class="technique-icon">
+                        <i class="fas fa-hammer"></i>
+                    </div>
+                    <h4>Martillado</h4>
+                    <p>Proceso de dar forma y textura al metal mediante golpes precisos, creando efectos únicos y superficies con carácter.</p>
+                </div>
+                <div class="technique-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                    <div class="technique-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h4>Incrustaciones</h4>
+                    <p>Arte de combinar diferentes metales y materiales, creando diseños con profundidad y contraste visual.</p>
+                </div>
+                <div class="technique-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+                    <div class="technique-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h4>Reticulado</h4>
+                    <p>Técnica que utiliza calor para crear texturas orgánicas en la superficie del metal, similar a paisajes naturales.</p>
+                </div>
+                <div class="technique-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
+                    <div class="technique-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h4>Pátina</h4>
+                    <p>Proceso de oxidación controlada que añade color y profundidad al metal, creando acabados antiguos y únicos.</p>
+                </div>
+                <div class="technique-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
+                    <div class="technique-icon">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <h4>Técnicas Mixtas</h4>
+                    <p>Combinación de diferentes métodos y materiales que dan como resultado piezas únicas con personalidad propia.</p>
+                </div>
+            </div>
+            <div class="unique-features" data-aos="fade-up" data-aos-duration="1000">
+                <h3>¿Qué hace únicas nuestras joyas?</h3>
+                <p>Cada pieza que creamos es única, nunca trabajamos en serie. Nuestras joyas son elaboradas completamente a mano, utilizando técnicas tradicionales que aseguran su originalidad y calidad. Cada creación lleva consigo una parte de nuestra historia y tradición familiar, manteniendo vivo el legado artesanal que ha pasado de generación en generación.</p>
+            </div>
+        </div>
+    </section>
+    <!-- Información complementaria y redes sociales Alexis -->
+    <section class="section clients">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2 style="color: var(--light-color);">Nuestros Clientes</h2>
+            </div>
+            <div class="clients-content">
+                <div class="clients-info" data-aos="fade-right" data-aos-duration="1000">
+                    <h3 style="color: var(--light-color);">¿Para quién creamos?</h3>
+                    <p>Nuestros clientes ideales son personas que buscan originalidad, que aprecian las piezas únicas y las joyas que perduran en el tiempo. Valoran el trabajo artesanal y el significado cultural detrás de cada creación.</p>
+                    <p>Diseñamos para quienes desean expresar su personalidad a través de joyas que cuentan historias, para aquellos que entienden que una joya no es solo un adorno, sino un símbolo que perdura en el tiempo.</p>
+                </div>
+                <div class="occasions-info" data-aos="fade-left" data-aos-duration="1000">
+                    <h3 style="color: var(--light-color);">Ocasiones Especiales</h3>
+                    <p>Nuestras joyas son perfectas para momentos que merecen ser recordados, creaciones que se convierten en testigos de instantes especiales en la vida.</p>
+                    <div class="occasions-list">
+                        <span class="occasion-item">Matrimonios</span>
+                        <span class="occasion-item">Compromisos</span>
+                        <span class="occasion-item">Aniversarios</span>
+                        <span class="occasion-item">Cumpleaños</span>
+                        <span class="occasion-item">Día de los enamorados</span>
+                        <span class="occasion-item">Navidad</span>
+                        <span class="occasion-item">Momentos para recordar</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section history" id="history">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Nuestra Historia</h2>
+            </div>
+            <div class="history-timeline">
+                <div class="timeline-item" data-aos="fade-up" data-aos-duration="800">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Inicios</span>
+                        <h4>Un Legado Familiar</h4>
+                        <p>Malabarizta Designs nace de una hermosa historia familiar. Mi padre fue orfebre, aunque en algún momento abandonó el oficio por dificultades económicas y luego de sufrir un ACV.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-up" data-aos-duration="800">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2010</span>
+                        <h4>El Taller Compartido</h4>
+                        <p>Un día decidí tomar un curso de orfebrería para aprender a soldar, lo que inspiró a mi padre a retomar su pasión. Juntos armamos un taller, donde él encontró su rehabilitación.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-up" data-aos-duration="800">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2013</span>
+                        <h4>Dedicación Completa</h4>
+                        <p>Dejé de trabajar de forma dependiente, desde que quedé embarazada de mi hijo menor Jorgito, quien tiene TEA severo. Desde entonces, me he dedicado completamente a él y a mis joyas.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-up" data-aos-duration="800">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2020</span>
+                        <h4>Continuando el Legado</h4>
+                        <p>Mi padre falleció debido al Covid. Fue un momento muy difícil en mi vida, pero heredé todo su taller y sus herramientas, cada una hecha a su modo. Eso me INSPIRA a realizar cada pieza con algo de él.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-up" data-aos-duration="800">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Presente</span>
+                        <h4>Malabarizta Hoy</h4>
+                        <p>Hoy, el nombre "Malabarizta" refleja mi capacidad para realizar muchas cosas a la vez, especialmente utilizar diversas técnicas para crear algo único y especial, manteniendo vivo el legado de mi padre.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section inspiration">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2 style="color: var(--light-color);">Nuestra Inspiración</h2>
+            </div>
+            <div class="inspiration-content">
+                <div class="inspiration-image" data-aos="fade-right" data-aos-duration="1000">
+                    <img src="img/image6.png" alt="Inspiración Mapuche">
+                </div>
+                <div class="inspiration-text" data-aos="fade-left" data-aos-duration="1000">
+                    <h3 style="color: var(--light-color);">Raíces que Inspiran</h3>
+                    <p>Siempre me han inspirado las joyas étnicas, sobre todo las de tradición Mapuche, así como otras joyas de raíces populares de nuestra idiosincrasia chilena.</p>
+                    <p>La conexión con la tierra, los símbolos ancestrales y el profundo significado detrás de cada diseño son elementos que se reflejan en nuestras creaciones, honrando la rica herencia cultural que nos rodea.</p>
+                    <div class="ethnic-pattern" style="opacity: 0.2;"></div>
+                    <h3 style="color: var(--light-color);">Nuestra Visión de Futuro</h3>
+                    <p>Imaginamos que nuestra marca sea reconocida a nivel nacional por la calidad y originalidad de nuestras piezas. Nos gustaría tener una tienda física donde podamos mostrar nuestras creaciones y acercar el arte de la orfebrería a más personas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Contáctanos</h2>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info" data-aos="fade-right" data-aos-duration="1000">
+                    <h3>Información de Contacto</h3>
+                    <p>Actualmente no contamos con un local establecido, vendemos nuestros productos en ferias y exposiciones, a través de una agrupación en la comuna de La Florida y en línea a través de nuestras redes sociales.</p>
+                    
+
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>malabarizta@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4>Teléfono</h4>
+                            <p>+56 9 8443 2462</p>
+                        </div>
+                    </div>
+                    
+                    <h4>Síguenos en Redes Sociales</h4>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/malabariztadesigns" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                  
+                        <a href="https://api.whatsapp.com/send?phone=56984432462" class="social-link">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+             
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <a href="#" class="footer-logo">Malabarizta Designs</a>
+                    <p>Joyería artesanal única inspirada en la cultura Mapuche y elaborada con técnicas tradicionales de orfebrería.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/malabariztadesigns" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                  
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="#home">Inicio</a></li>
+                        <li><a href="#about">Nosotros</a></li>
+                        <li><a href="#gallery">Galería</a></li>
+                        <li><a href="#techniques">Técnicas</a></li>
+                        <li><a href="#history">Historia</a></li>
+                        <li><a href="#contact">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Ocasiones Especiales</h4>
+                    <ul>
+                        <li><a href="#">Matrimonios</a></li>
+                        <li><a href="#">Compromisos</a></li>
+                        <li><a href="#">Aniversarios</a></li>
+                        <li><a href="#">Cumpleaños</a></li>
+                        <li><a href="#">Regalos Personalizados</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Malabarizta Designs. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
+
+
+// Ruta: F:\iplacex\disenhioweb.prueba1\style.css
+   :root {
+    --primary-color: #c0a080;
+    --secondary-color: #8c7361;
+    --accent-color: #a03c28;
+    --light-color: #f5f2ed;
+    --dark-color: #2f2f2f;
+    --mapuche-red: #ab3c3c;
+    --mapuche-blue: #3c6fab;
+    --mapuche-black: #232323;
+    --gradient-gold: linear-gradient(135deg, #e6d0a9 0%, #c0a080 50%, #a78d5d 100%);
+    --font-primary: 'Playfair Display', serif;
+    --font-secondary: 'Montserrat', sans-serif;
+    --transition: all 0.3s ease;
+    --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --shadow-strong: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-secondary);
+    color: var(--dark-color);
+    background-color: var(--light-color);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-primary);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+h1 {
+    font-size: 3.5rem;
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+}
+
+h3 {
+    font-size: 1.75rem;
+    color: var(--primary-color);
+}
+
+h4 {
+    font-size: 1.25rem;
+    color: var(--secondary-color);
+}
+
+p {
+    margin-bottom: 1rem;
+    font-weight: 300;
+}
+
+a {
+    text-decoration: none;
+    color: var(--accent-color);
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--mapuche-red);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: var(--gradient-gold);
+    color: var(--light-color);
+    border: none;
+    border-radius: 50px;
+    font-weight: 500;
+    font-family: var(--font-secondary);
+    cursor: pointer;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    box-shadow: var(--shadow);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-strong);
+    color: white;
+}
+
+.section {
+    padding: 100px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title h2 {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px;
+}
+
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 80px;
+    height: 3px;
+    background: var(--primary-color);
+    transform: translateX(-50%);
+}
+
+.ethnic-pattern {
+    height: 50px;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.184 20c.357-.13.72-.264 1.088-.402l1.768-.661C33.64 15.347 39.647 14 50 14c10.271 0 15.362 1.222 24.629 4.928.955.383 1.869.74 2.75 1.072h6.225c-2.51-.73-5.139-1.691-8.233-2.928C65.888 13.278 60.562 12 50 12c-10.626 0-16.855 1.397-26.66 5.063l-1.767.662c-2.475.923-4.66 1.674-6.724 2.275h6.335zm0-20C13.258 2.892 8.077 4 0 4V2c5.744 0 9.951-.574 14.85-2h6.334zM77.38 0C85.239 2.966 90.502 4 100 4V2c-6.842 0-11.386-.542-16.396-2h-6.225zM0 14c8.44 0 13.718-1.21 22.272-4.402l1.768-.661C33.64 5.347 39.647 4 50 4c10.271 0 15.362 1.222 24.629 4.928C84.112 12.722 89.438 14 100 14v-2c-10.271 0-15.362-1.222-24.629-4.928C65.888 3.278 60.562 2 50 2 39.374 2 33.145 3.397 23.34 7.063l-1.767.662C13.223 10.84 8.163 12 0 12v2z' fill='%23c0a080' fill-opacity='0.2' fill-rule='evenodd'/%3E%3C/svg%3E");
+    opacity: 0.5;
+    margin: 30px 0;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: transparent;
+    padding: 20px 0;
+    transition: var(--transition);
+}
+
+.navbar.scrolled {
+    background-color: var(--light-color);
+    padding: 10px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-logo {
+    font-family: var(--font-primary);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.navbar-links {
+    display: flex;
+    gap: 30px;
+}
+
+.navbar-links a {
+    color: var(--dark-color);
+    font-weight: 500;
+    position: relative;
+}
+
+.navbar-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.navbar-links a:hover::after,
+.navbar-links a.active::after {
+    width: 100%;
+}
+
+.navbar-toggle {
+    display: none;
+    font-size: 1.5rem;
+    color: var(--dark-color);
+    cursor: pointer;
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(rgba(47, 47, 47, 0.7), rgba(47, 47, 47, 0.7));
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: var(--light-color);
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero-title {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    color: var(--light-color);
+    -webkit-text-fill-color: var(--light-color);
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 20px;
+}
+
+.hero-scroll {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
+}
+
+.hero-scroll i {
+    font-size: 2rem;
+    color: var(--light-color);
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0) translateX(-50%);
+    }
+    40% {
+        transform: translateY(-15px) translateX(-50%);
+    }
+    60% {
+        transform: translateY(-10px) translateX(-50%);
+    }
+}
+
+.about {
+    background-color: var(--light-color);
+}
+
+.about-content {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-image {
+    flex: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow-strong);
+    position: relative;
+}
+
+.about-image::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 100%;
+    height: 100%;
+    border: 3px solid var(--primary-color);
+    border-radius: 10px;
+    z-index: -1;
+}
+
+.about-image img {
+    width: 100%;
+    display: block;
+}
+
+/* Mission Vision Section */
+.mission-vision {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+}
+
+.mission-vision-content {
+    display: flex;
+    gap: 40px;
+}
+
+.mission-card, .vision-card {
+    flex: 1;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 10px;
+    transition: var(--transition);
+}
+
+.mission-card:hover, .vision-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-strong);
+}
+
+.mission-card h3, .vision-card h3 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    color: var(--light-color);
+}
+
+.mission-card h3 i, .vision-card h3 i {
+    margin-right: 10px;
+    color: var(--primary-color);
+    font-size: 1.8rem;
+}
+
+.gallery {
+    background-color: var(--light-color);
+    overflow: hidden;
+}
+
+.gallery-container {
+    position: relative;
+    padding: 50px 0;
+}
+
+.gallery-slider {
+    display: flex;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: var(--shadow-strong);
+}
+
+.gallery-slide {
+    min-width: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.gallery-slide img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+}
+
+.gallery-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--dark-color);
+    cursor: pointer;
+    transition: var(--transition);
+    z-index: 10;
+}
+
+.gallery-nav:hover {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+}
+
+.gallery-prev {
+    left: 20px;
+}
+
+.gallery-next {
+    right: 20px;
+}
+
+.gallery-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.gallery-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    opacity: 0.5;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.gallery-dot.active {
+    opacity: 1;
+    background-color: var(--primary-color);
+    transform: scale(1.2);
+}
+
+.techniques {
+    background-color: var(--light-color);
+}
+
+.techniques-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.technique-card {
+    flex: 1;
+    min-width: 300px;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    text-align: center;
+}
+
+.technique-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-strong);
+}
+
+.technique-icon {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background: var(--gradient-gold);
+    color: var(--light-color);
+    font-size: 2rem;
+}
+
+.unique-features {
+    margin-top: 60px;
+    padding: 40px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.clients {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+}
+
+.clients-content {
+    display: flex;
+    gap: 40px;
+}
+
+.clients-info, .occasions-info {
+    flex: 1;
+}
+
+.occasions-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.occasion-item {
+    padding: 8px 20px;
+    border-radius: 50px;
+    background-color: var(--accent-color);
+    color: var(--light-color);
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.occasion-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+    background-color: var(--mapuche-red);
+}
+
+.history {
+    background-color: var(--light-color);
+}
+
+.history-timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.history-timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background-color: var(--primary-color);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 60px;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--gradient-gold);
+    z-index: 2;
+}
+
+.timeline-content {
+    width: calc(50% - 40px);
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    position: relative;
+}
+
+.timeline-content::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    width: 20px;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+    margin-left: auto;
+}
+
+.timeline-item:nth-child(odd) .timeline-content::before {
+    left: -20px;
+}
+
+.timeline-item:nth-child(even) .timeline-content::before {
+    right: -20px;
+}
+
+.timeline-date {
+    display: inline-block;
+    padding: 5px 15px;
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.inspiration {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+}
+
+.inspiration-content {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.inspiration-image {
+    flex: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow-strong);
+}
+
+.inspiration-image img {
+    width: 100%;
+    display: block;
+}
+
+.inspiration-text {
+    flex: 1;
+}
+
+.contact {
+    background-color: var(--light-color);
+}
+
+.contact-content {
+    display: flex;
+    gap: 40px;
+}
+
+.contact-info {
+    flex: 1;
+}
+
+.contact-form {
+    flex: 1;
+    padding: 40px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: var(--shadow);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--secondary-color);
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    transition: var(--transition);
+    font-family: var(--font-secondary);
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(192, 160, 128, 0.2);
+}
+
+textarea.form-control {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact-info-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-gold);
+    color: var(--light-color);
+    border-radius: 50%;
+    font-size: 1.2rem;
+    margin-right: 20px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    border-radius: 50%;
+    font-size: 1.2rem;
+    transition: var(--transition);
+}
+
+.social-link:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+    background-color: var(--accent-color);
+    color: var(--light-color);
+}
+
+.footer {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    padding: 60px 0 30px;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.footer-logo {
+    font-family: var(--font-primary);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    display: block;
+}
+
+.footer-links {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-links h4 {
+    color: var(--light-color);
+    margin-bottom: 25px;
+}
+
+.footer-links ul li {
+    margin-bottom: 12px;
+}
+
+.footer-links ul li a {
+    color: rgba(255, 255, 255, 0.7);
+    transition: var(--transition);
+}
+
+.footer-links ul li a:hover {
+    color: var(--primary-color);
+    padding-left: 5px;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+@media (max-width: 992px) {
+    h1 {
+        font-size: 2.8rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .section {
+        padding: 80px 0;
+    }
+
+    .about-content, 
+    .mission-vision-content, 
+    .clients-content, 
+    .inspiration-content, 
+    .contact-content {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .history-timeline::before {
+        left: 30px;
+    }
+
+    .timeline-dot {
+        left: 30px;
+    }
+
+    .timeline-content {
+        width: calc(100% - 60px);
+        margin-left: auto !important;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-content::before,
+    .timeline-item:nth-child(even) .timeline-content::before {
+        left: -20px;
+        right: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .navbar-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--light-color);
+        padding: 20px;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+
+    .navbar-toggle {
+        display: block;
+    }
+
+    .technique-card {
+        min-width: 100%;
+    }
+
+    .hero-btns {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+
+    .section {
+        padding: 60px 0;
+    }
+
+    .section-title {
+        margin-bottom: 40px;
+    }
+
+    .gallery-slide img {
+        height: 400px;
+    }
+
+    .gallery-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+}
+

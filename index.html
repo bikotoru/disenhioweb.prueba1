@@ -6,12 +6,10 @@
     <title>Malabarizta Designs | Joyería Artesanal</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.0.0/swiper-bundle.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <link rel="stylesheet" href="style.css">
-
-    <style>
-     
-    </style>
 </head>
 <body>
     <!-- Nombre (Header pagina) Felipe Vergara -->
@@ -89,37 +87,105 @@
         </div>
     </section>
 
-    <!-- Carrucel imagenes Victor Ureta -->
+    <!-- Carrusel de imágenes con Swiper.js -->
     <section class="section gallery" id="gallery">
         <div class="container">
             <div class="section-title" data-aos="fade-up">
                 <h2>Nuestra Colección</h2>
             </div>
-            <div class="gallery-container" data-aos="fade-up" data-aos-duration="1000">
-                <div class="gallery-slider" id="gallerySlider">
-                    <div class="gallery-slide">
+            <div class="swiper-container gallery-swiper" data-aos="fade-up" data-aos-duration="1000">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
                         <img src="img/imagen1.png" alt="Joyería Malabarizta 1">
                     </div>
-                    <div class="gallery-slide">
+                    <div class="swiper-slide">
                         <img src="img/imagen2.png" alt="Joyería Malabarizta 2">
                     </div>
-                    <div class="gallery-slide">
+                    <div class="swiper-slide">
                         <img src="img/imagen3.png" alt="Joyería Malabarizta 3">
                     </div>
-                    <div class="gallery-slide">
+                    <div class="swiper-slide">
                         <img src="img/imagen4.png" alt="Joyería Malabarizta 4">
                     </div>
-                    <div class="gallery-slide">
+                    <div class="swiper-slide">
                         <img src="img/imagen5.png" alt="Joyería Malabarizta 5">
                     </div>
+                    <!-- Nuevas imágenes añadidas -->
+                    <div class="swiper-slide">
+                        <img src="img/12.jpg" alt="Joyería Malabarizta 6">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/13.jpg" alt="Joyería Malabarizta 7">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/14.jpg" alt="Joyería Malabarizta 8">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/15.jpg" alt="Joyería Malabarizta 9">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/16.jpg" alt="Joyería Malabarizta 10">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/17.jpg" alt="Joyería Malabarizta 11">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/18.jpg" alt="Joyería Malabarizta 12">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/19.jpg" alt="Joyería Malabarizta 13">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/20.jpg" alt="Joyería Malabarizta 14">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/21.jpg" alt="Joyería Malabarizta 15">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/22.jpg" alt="Joyería Malabarizta 16">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/23.jpg" alt="Joyería Malabarizta 17">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/24.jpg" alt="Joyería Malabarizta 18">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/25.jpg" alt="Joyería Malabarizta 19">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/26.jpg" alt="Joyería Malabarizta 20">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/27.jpg" alt="Joyería Malabarizta 21">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/28.jpg" alt="Joyería Malabarizta 22">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/29.jpg" alt="Joyería Malabarizta 23">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/30.jpg" alt="Joyería Malabarizta 24">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/31.jpg" alt="Joyería Malabarizta 25">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/32.jpg" alt="Joyería Malabarizta 26">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/33.jpg" alt="Joyería Malabarizta 27">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/34.jpg" alt="Joyería Malabarizta 28">
+                    </div>
                 </div>
-                <div class="gallery-nav gallery-prev" id="galleryPrev">
-                    <i class="fas fa-chevron-left"></i>
-                </div>
-                <div class="gallery-nav gallery-next" id="galleryNext">
-                    <i class="fas fa-chevron-right"></i>
-                </div>
-                <div class="gallery-dots" id="galleryDots"></div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- Add Navigation -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
         </div>
     </section>
@@ -370,6 +436,8 @@
         </div>
     </footer>
 
+    <!-- Swiper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.0.0/swiper-bundle.min.js"></script>
     <script src="app.js"></script>
 
 </body>
